@@ -29,9 +29,10 @@
  
 <!-- the main fileinput plugin script JS file -->
 <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/fileinput.min.js" defer></script>
- 
+
 <!-- following theme script is needed to use the Font Awesome 5.x theme (`fa5`). Uncomment if needed. -->
-<!-- script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/themes/fa5/theme.min.js"></script -->
- 
-<!-- optionally if you need translation for your language then include the locale file as mentioned below (replace LANG.js with your language locale) -->
+
+<script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
+<script src="https://jsuites.net/v4/jsuites.js"></script>
+
 @vite(['resources/js/krajeeFileinputLang.js', 'resources/css/app.css', 'resources/js/app.js'])
