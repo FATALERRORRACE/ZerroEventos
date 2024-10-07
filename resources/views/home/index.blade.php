@@ -3,11 +3,10 @@
 @include('app.head')
 
 <body class="antialiased">
-  <div id="loader-container"style="z-index:1000;display: flex;min-height: 100vh;background-color:white;position: absolute;width: 100vw;"><img src="/img/loader.gif" style="margin: auto;" srcset=""></div>
-  
-    <div class="container text-center" class="stepper-container">
-        <div class="row justify-content-md-center">
-          <div class="col-sm-12 col-md-12 col-lg-11 col-xl-10">
+  @include('app.navbar')
+    <div class="container text-center stepper-container">
+        <div class="row justify-content-md-center " >
+          <div class="col-sm-12 col-md-12 col-lg-11 col-xl-10 stepper-no-container">
               <div class="d-flex justify-content-around">
                   <div>
                       <button id="stepper-selector-1" class="stepper-selector btn btn-success rounded-circle" type="button" data-target="collapseStepper1">1</button>

@@ -1,7 +1,7 @@
 
 body {
     font-family: 'Nunito', sans-serif;
-    background-color: rgb(179, 179, 179);
+    background-color: rgb(233, 233, 233);
 }
 .container{
     background-color: white;
@@ -29,3 +29,24 @@ body{
     width: 50%;
 }
 
+.stepper-no-container{
+    margin-top: 1em;
+}
+
+.section-container-fluid-navbar{
+    padding: 20px;
+}
+.section-container-fluid-navbar > p{
+    text-align: end;
+}
+.dropdown-menu > li{
+    display: flex;
+}
+.dropdown-menu a{
+    margin: auto;
+}
+
+.dropdown-menu img{
+    width: 40px;
+    height: auto;
+}
