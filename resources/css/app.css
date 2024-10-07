@@ -22,7 +22,7 @@ body{
 }
 
 .stepper-titles,.stepper-selector{
-    font-weight: 900;
+    font-weight: 700;
 }
 #collapseStepper1-id, #collapseStepper2-id, #collapseStepper3-id{
     height: 10px;
