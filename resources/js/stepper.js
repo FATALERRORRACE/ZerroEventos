@@ -12,21 +12,26 @@ jQuery(document).ready(()=>{
             $(".stepper-selector").prop('disabled',false);
         }, 500);
         hideExcept(ev.currentTarget.dataset.target);
-        $(".stepper-selector").addClass('btn-secondary').removeClass('btn-success');
-        $(ev.currentTarget).removeClass('btn-secondary').addClass('btn-success');
     });
     function hideExcept(id){
         // colapse activation
         Object.keys(collapses).forEach(element => {
-            if(element != id) collapses[element].hide();
+            if(element != id)
+                collapses[element].hide();
+            else
+                collapses[id].show();
         });
-        collapses[id].show();
+        
         // bar color activation
         $("#collapseStepper3-id, #collapseStepper2-id").removeClass('btn-success').addClass('btn-secondary');
+        $("#stepper-selector-2, #stepper-selector-3").addClass('btn-secondary').removeClass('btn-success');
         switch (id){
-            case 'collapseStepper3':    $("#collapseStepper3-id").removeClass('btn-secondary').addClass('btn-success');
-            case 'collapseStepper2': $("#collapseStepper2-id").removeClass('btn-secondary').addClass('btn-success');
-            
+            case 'collapseStepper3':
+                $("#stepper-selector-3").removeClass('btn-secondary').addClass('btn-success');
+                $("#collapseStepper3-id").removeClass('btn-secondary').addClass('btn-success');
+            case 'collapseStepper2':
+                $("#stepper-selector-2").removeClass('btn-secondary').addClass('btn-success');
+                $("#collapseStepper2-id").removeClass('btn-secondary').addClass('btn-success');
         }
         
     }

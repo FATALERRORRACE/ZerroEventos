@@ -21,10 +21,11 @@ body{
     width: 100%;
 }
 
-.stepper-selector{
+.stepper-titles,.stepper-selector{
     font-weight: 900;
 }
 #collapseStepper1-id, #collapseStepper2-id, #collapseStepper3-id{
     height: 10px;
     width: 50%;
 }
+
