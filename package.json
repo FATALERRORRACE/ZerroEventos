@@ -13,6 +13,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "compass": "^0.1.1",
         "cropperjs": "^1.6.2"
     }
 }

@@ -1,20 +1,21 @@
 import './bootstrap';
-import { cropper } from './imgCropper';
-import XlssClassCreator from './xlssInstance';
+import LibrariesCreator from './LibrariesCreator';
 
-const table = new XlssClassCreator;
+const librariesCreator = new LibrariesCreator;
 
 jQuery(document).ready(()=>{
-    table.CreateTable();
-    //FILE INPUT
-    // initialize plugin with defaults
-    // jQuery("#file").fileinput();
-    // // with plugin options
-    // jQuery("#file").fileinput({'showUpload':false, 'previewFileType':'any'})
-    // .on('fileloaded', function(event, file, previewId, fileId, index, reader) {
-    //     console.log("fileloaded");
-    // });
-    // GET POSITION
+    $(".stepper-selector").on('click',(ev)=>{
+        switch (ev.currentTarget.dataset.target) {
+            case 'collapseStepper3':
+                librariesCreator.createImageCropper()
+            case 'collapseStepper2':
+                console.log("hgere");
+                librariesCreator.CreateTable();
+            case 'collapseStepper1':
+                librariesCreator.createFileInput();
+        }
+    });
+
     $('#button').click(()=>{
         console.log(cropper.getData());
     });
