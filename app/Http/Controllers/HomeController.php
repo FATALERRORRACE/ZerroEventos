@@ -14,4 +14,13 @@ class HomeController extends Controller{
             ]
         );
     }
+
+    public function getFormNewColumn(Request $request){
+        $request->headers->set("Accept", "text/html");
+        $request->headers->set("Content-Type", "text/html");
+        return view('app/formColumn', 
+            [
+            ]
+        );
+    }
 }

@@ -4,7 +4,8 @@ var collapses = {
     'collapseStepper2': new bootstrap.Collapse('#collapseStepper2', { toggle: false}),
     'collapseStepper3': new bootstrap.Collapse('#collapseStepper3', { toggle: false})
 };
-
+collapses['collapseStepper2'].show();
+collapses['collapseStepper1'].show();
 jQuery(document).ready(()=>{
     $(".stepper-selector").on('click',(ev)=>{
         $(".stepper-selector").prop('disabled',true);

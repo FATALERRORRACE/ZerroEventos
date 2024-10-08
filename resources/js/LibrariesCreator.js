@@ -11,64 +11,21 @@ export default class LibrariesCreator{
     cropperInstanceExists = false;
 
     data = [
-        ['Jazz', 'Honda', '2019-02-12', '', true, '$ 2.000,00', '#777700'],
-        ['Civic', 'Honda', '2018-07-11', '', true, '$ 4.000,01', '#007777'],
+        [],
     ];
 
     column = [
-        {
-            type: 'text',
-            title:'Car',
-            width:90
-        },
-        {
-            type: 'dropdown',
-            title:'Make',
-            width:120,
-            source:[
-                "Alfa Romeo",
-                "Audi",
-                "Bmw",
-                "Chevrolet",
-                "Chrystler",
-                // (...)
-            ]
-        },
-        {
-            type: 'calendar',
-            title:'Available',
-            width:120
-        },
-        {
-            type: 'image',
-            title:'Photo',
-            width:120
-        },
-        {
-            type: 'checkbox',
-            title:'Stock',
-            width:80
-        },
-        {
-            type: 'numeric',
-            title:'Price',
-            mask:'$ #.##,00',
-            width:80,
-            decimal:','
-        },
-        {
-            type: 'color',
-            width:80,
-            render:'square',
-        },
     ];
 
 
     CreateTable(){
         if(this.tableInstanceExists)return;
+        var globalUse = this
         this.tableInstance = jspreadsheet(document.getElementById('spreadsheet'), {
             data: this.data,
-            columns: this.column
+            columns: this.column,
+            onfocus: this.onFocusTable,
+            onselection: this.onselectionTable,
         });
         this.tableInstanceExists = true;
     }
@@ -83,6 +40,18 @@ export default class LibrariesCreator{
             },
         );
         this.cropperInstanceExists = true;
+    }
+
+    onFocusTable(instance){
+        console.log(instance);
+        console.log('The table ' + $(instance).prop('id') + ' is focus');
+        
+    }
+
+    onselectionTable(instance, x1, y1, x2, y2, origin) {
+        var cellName1 = jspreadsheet.getColumnNameFromId([x1, y1]);
+        var cellName2 = jspreadsheet.getColumnNameFromId([x2, y2]);
+        console.log('The selection from ' + cellName1 + ' to ' + cellName2 + '');
     }
 
     createFileInput(){
